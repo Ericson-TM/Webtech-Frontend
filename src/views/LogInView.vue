@@ -3,9 +3,9 @@
     <h1>This is a Login Page</h1>
     <form @submit.prevent="login">
       <label for="username">Username:</label>
-      <input type="text" id="username" v-model="username" required>
+      <input type="text" id="username" v-model="username" placeholder="username" required>
       <label for="password">Password:</label>
-      <input type="password" id="password" v-model="password" required>
+      <input type="password" id="password" v-model="password" placeholder="password" required>
       <button type="submit">Login</button>
     </form>
   </div>
