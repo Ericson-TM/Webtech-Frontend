@@ -22,12 +22,16 @@
           </li>
         </ul>
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <router-link class="nav-link" to="/login">Login</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/register">Registrieren</router-link>
-          </li>
+            <li class="nav-item">
+              <router-link to="/login">
+                <button class="btn custom-login-btn">Login</button>
+              </router-link>
+            </li>
+            <li class="nav-item ms-2">
+              <router-link to="/register">
+                <button class="btn custom-register-btn">Registrieren</button>
+              </router-link>
+            </li>
         </ul>
       </div>
     </div>
@@ -46,6 +50,34 @@
 
   .nav-link:hover{
     color: #f8f8f8 !important;
+  }
+
+  .custom-login-btn{
+    background-color: #4caf50;
+    border-color: #4caf50;
+    color: white;
+  }
+
+  .custom-login-btn:hover{
+    background-color: #388e3c;
+    border-color: #388e3c;
+    color: white;
+  }
+
+  .custom-register-btn{
+    background-color: #ff5722;
+    border-color: #ff5722;
+    color: white;
+  }
+
+  .custom-register-btn:hover{
+    background-color: #9c3b20;
+    border-color: #9c3b20;
+    color: white;
+  }
+
+  .ms-2{
+    margin-left: 0.5rem;
   }
 
 </style>
