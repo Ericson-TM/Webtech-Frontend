@@ -1,7 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import LogInView from "@/views/LogInView.vue";
+import HomeView from '@/views/HomeView.vue'
+import AboutView from '@/views/AboutView.vue'
 import TrainingsplanView from '@/views/TrainingsplanView.vue'
+import KontaktView from '@/views/KontaktView.vue'
+import LoginView from '@/views/LoginView.vue'
+import RegisterView from '@/views/RegisterView.vue'
+
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,30 +16,37 @@ const router = createRouter({
       name: 'home',
       component: HomeView
     },
+
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      component: AboutView
     },
 
     {
-      path: '/logIn',
-      name: 'logIn',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: LogInView
-
-    },
-
-    {
-      path: '/trainingsplan',
-      name: 'trainingsplan',
+      path: '/trainingsplaene',
+      name: 'trainingsplaene',
       component: TrainingsplanView
+    },
+
+    {
+      path: '/contact',
+      name: 'contact',
+      component: KontaktView
+    },
+
+    {
+      path: '/login',
+      name: 'login',
+      component: LoginView
+    },
+
+    {
+      path: '/register',
+      name: 'register',
+      component: RegisterView
     }
+
   ]
 })
 

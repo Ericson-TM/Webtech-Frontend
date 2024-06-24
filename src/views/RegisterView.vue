@@ -1,47 +1,45 @@
 <template>
-  <div class="login-form">
-    <h2>Login</h2>
-    <form @submit.prevent="login">
+  <div class="register-form">
+    <h2>Register</h2>
+    <form @submit.prevent="register">
       <div class="form-group">
         <label for="username">Username:</label>
         <input type="text" v-model="username" id="username" required />
       </div>
       <div class="form-group">
-        <label for="password">Passwort:</label>
+        <label for="password">Password:</label>
         <input type="password" v-model="password" id="password" required />
       </div>
-      <button type="submit">Login</button>
+      <button type="submit">Register</button>
     </form>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import axios from 'axios'
-import { useRouter } from 'vue-router'
+import { ref } from 'vue';
+import axios from 'axios';
+import { useRouter } from 'vue-router';
 
-const username = ref('')
-const password = ref('')
-const router = useRouter()
+const router = useRouter();
+const username = ref('');
+const password = ref('');
 
-const login = async () => {
+const register = async () => {
   try {
-    const response = await axios.post('http://localhost:8080/user/login', {
+    const response = await axios.post('http://localhost:8080/user/register', {
       username: username.value,
       password: password.value
-    })
-    // Beispielhafte Verarbeitung der Antwort und Speicherung des Tokens
-    console.log('Erfolgreich eingeloggt:', response.data)
-    router.push('/') // Weiterleitung nach erfolgreichem Login
-
+    });
+    console.log('User erfolgreich erstellt:', response.data);
+    router.push('/');
   } catch (error) {
-    console.error('Fehler beim Einloggen:', error)
+    console.error('Fehler beim Registrieren:', error);
   }
-}
+};
 </script>
 
 <style scoped>
-.login-form {
+.register-form {
   max-width: 400px;
   margin: 0 auto;
   padding: 1rem;
@@ -50,7 +48,7 @@ const login = async () => {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.login-form h2 {
+.register-form h2 {
   margin-bottom: 1rem;
 }
 
@@ -66,17 +64,19 @@ const login = async () => {
 .form-group input {
   width: 100%;
   padding: 0.5rem;
+  font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
 button {
+  border-radius: 4px;
   padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
   background-color: #007bff;
   color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
 }
 
 button:hover {
@@ -87,4 +87,5 @@ button:hover {
   color: red;
   margin-top: 1rem;
 }
+
 </style>
