@@ -37,7 +37,7 @@ const errorMessage = ref('')
 
 const submitForm = async () => {
   try {
-    const response = await axios.post('/api/contact', {
+    const response = await axios.post('/', {
       name: name.value,
       email: email.value,
       message: message.value

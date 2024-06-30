@@ -90,8 +90,4 @@ button:hover {
   background-color: #0056b3;
 }
 
-.error {
-  color: red;
-  margin-top: 1rem;
-}
 </style>
