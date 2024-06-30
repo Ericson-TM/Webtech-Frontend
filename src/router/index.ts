@@ -25,7 +25,7 @@ const router = createRouter({
     {
       path: '/trainingsplaene',
       name: 'trainingsplaene',
-      component: TrainingsplanView
+      component: TrainingsplanView,
     },
 
     {

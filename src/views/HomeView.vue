@@ -85,7 +85,7 @@
         <div class="col-md-6">
           <div class="card">
             <div class="card-body">
-              <img src="@/components/images/Profilbild%20transparent.png" alt="Cesar Vistel">
+              <img src="@/components/images/Cesar.png" alt="Cesar Vistel">
               <div>
                 <h5 class="card-title">Cesar Vistel</h5>
                 <p class="card-text">HTW Berlin</p>
