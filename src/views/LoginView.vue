@@ -1,17 +1,19 @@
 <template>
-  <div class="login-form">
-    <h2>Login</h2>
-    <form @submit.prevent="login">
-      <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" v-model="username" id="username" required />
-      </div>
-      <div class="form-group">
-        <label for="password">Passwort:</label>
-        <input type="password" v-model="password" id="password" required />
-      </div>
-      <button type="submit">Login</button>
-    </form>
+  <div class="container">
+    <div class="login-form">
+      <h2>Login</h2>
+      <form @submit.prevent="login">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" v-model="username" id="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Passwort:</label>
+          <input type="password" v-model="password" id="password" required />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -41,6 +43,11 @@ const login = async () => {
 </script>
 
 <style scoped>
+
+.container {
+  padding-top: 58px;
+}
+
 .login-form {
   max-width: 400px;
   margin: 0 auto;

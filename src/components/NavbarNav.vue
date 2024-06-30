@@ -40,44 +40,55 @@
 
 <style scoped>
 
-  .bg-custom {
-    background-color: #E4E2DD !important;
-  }
+.navbar {
+  height: 100px;
+  padding: 0 1rem;
+}
 
-  .nav-link{
-    color: #181818 !important;
-  }
+.navbar .container-fluid{
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
 
-  .nav-link:hover{
-    color: #f8f8f8 !important;
-  }
+.bg-custom {
+  background-color: #E4E2DD !important;
+}
 
-  .custom-login-btn{
-    background-color: #4caf50;
-    border-color: #4caf50;
-    color: white;
-  }
+.nav-link{
+  color: #181818 !important;
+}
 
-  .custom-login-btn:hover{
-    background-color: #388e3c;
-    border-color: #388e3c;
-    color: white;
-  }
+.nav-link:hover{
+  color: #f8f8f8 !important;
+}
 
-  .custom-register-btn{
-    background-color: #ff5722;
-    border-color: #ff5722;
-    color: white;
-  }
+.custom-login-btn{
+  background-color: #684e45;
+  border-color: #75524b;
+  color: white;
+}
 
-  .custom-register-btn:hover{
-    background-color: #9c3b20;
-    border-color: #9c3b20;
-    color: white;
-  }
+.custom-login-btn:hover{
+  background-color: #805d4d;
+  border-color: #805d4d;
+  color: white;
+}
 
-  .ms-2{
-    margin-left: 0.5rem;
-  }
+.custom-register-btn{
+  background-color: #9c3b20;
+  border-color: #9c3b20;
+  color: white;
+}
+
+.custom-register-btn:hover{
+  background-color: #bf4d2f;
+  border-color: #bf4d2f;
+  color: white;
+}
+
+.ms-2{
+  margin-left: 0.5rem;
+}
 
 </style>

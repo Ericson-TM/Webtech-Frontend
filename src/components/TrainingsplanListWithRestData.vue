@@ -60,37 +60,40 @@ onMounted(() => {
 </script>
 
 <template>
-  <h2>{{ title }}</h2>
-  <form @submit.prevent="createTrainingsplan">
-    <input type="text" v-model="nameField" placeholder="Name"/>
-    <input type="text" v-model="zeitField" placeholder="Zeit" />
-    <input type="text" v-model="dauerField" placeholder="Dauer"/>
-    <input type="number" v-model="intensivitaetField" placeholder="Schwierigkeit"/>
-    <button>Erstellen</button>
-  </form>
-  <hr />
-  <table>
-    <tr>
-      <th>Entfernen</th>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Zeit</th>
-      <th>Dauer</th>
-      <th>Intensivität</th>
-    </tr>
-    <tr v-if="!trainingsplaene.length">
-      <td colspan="6">Keine Trainingspläne vorhanden</td>
-    </tr>
-    <tr v-for="trainingsplan in trainingsplaene" :key="trainingsplan.id">
-      <td>
-        <button @click="removeTrainingsplan(trainingsplan.id)" class="delete">Entfernen</button></td>
-      <td>{{ trainingsplan.id }}</td>
-      <td>{{ trainingsplan.name }}</td>
-      <td>{{ trainingsplan.zeit }}</td>
-      <td>{{ trainingsplan.dauer }}</td>
-      <td>{{ trainingsplan.intensivitaet }}</td>
-    </tr>
-  </table>
+  <div class="container-fluid">
+    <h2>{{ title }}</h2>
+    <form @submit.prevent="createTrainingsplan">
+      <input type="text" v-model="nameField" placeholder="Name"/>
+      <input type="text" v-model="zeitField" placeholder="Zeit" />
+      <input type="text" v-model="dauerField" placeholder="Dauer"/>
+      <input type="number" v-model="intensivitaetField" placeholder="Schwierigkeit"/>
+      <button>Erstellen</button>
+    </form>
+    <hr />
+    <table>
+      <tr>
+        <th>Entfernen</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Zeit</th>
+        <th>Dauer</th>
+        <th>Intensivität</th>
+      </tr>
+      <tr v-if="!trainingsplaene.length">
+        <td colspan="6">Keine Trainingspläne vorhanden</td>
+      </tr>
+      <tr v-for="trainingsplan in trainingsplaene" :key="trainingsplan.id">
+        <td>
+          <button @click="removeTrainingsplan(trainingsplan.id)" class="delete">Entfernen</button></td>
+        <td>{{ trainingsplan.id }}</td>
+        <td>{{ trainingsplan.name }}</td>
+        <td>{{ trainingsplan.zeit }}</td>
+        <td>{{ trainingsplan.dauer }}</td>
+        <td>{{ trainingsplan.intensivitaet }}</td>
+      </tr>
+    </table>
+  </div>
+
 
 </template>
 

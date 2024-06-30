@@ -1,24 +1,28 @@
 <template>
-  <div class="contact-form">
-    <h2>Kontaktieren Sie uns</h2>
-    <form @submit.prevent="submitForm">
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" v-model="name" id="name" required />
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" v-model="email" id="email" required />
-      </div>
-      <div class="form-group">
-        <label for="message">Nachricht:</label>
-        <textarea v-model="message" id="message" rows="5" required></textarea>
-      </div>
-      <button type="submit">Absenden</button>
-    </form>
-    <p v-if="successMessage">{{ successMessage }}</p>
-    <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
+  <div class="container">
+    <div class="contact-form">
+      <h2>Kontaktieren Sie uns</h2>
+      <form @submit.prevent="submitForm">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" v-model="name" id="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" v-model="email" id="email" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Nachricht:</label>
+          <textarea v-model="message" id="message" rows="5" required></textarea>
+        </div>
+        <button type="submit">Absenden</button>
+      </form>
+      <p v-if="successMessage">{{ successMessage }}</p>
+      <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
+    </div>
   </div>
+
+
 </template>
 
 <script setup lang="ts">
@@ -51,6 +55,10 @@ const submitForm = async () => {
 </script>
 
 <style scoped>
+
+.container{
+  padding-top: 58px;
+}
 .contact-form {
   max-width: 600px;
   margin: 0 auto;
@@ -83,7 +91,7 @@ const submitForm = async () => {
 
 button {
   padding: 0.75rem 1.5rem;
-  background-color: #28a745;
+  background-color: #8a675c;
   color: white;
   border: none;
   border-radius: 4px;
@@ -91,7 +99,7 @@ button {
 }
 
 button:hover {
-  background-color: #218838;
+  background-color: #bc8b7d;
 }
 
 .error {

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 
 import NavbarNav from '@/components/NavbarNav.vue'
+import FooterFoot from '@/components/FooterFoot.vue'
 
 
 </script>
@@ -12,6 +13,8 @@ import NavbarNav from '@/components/NavbarNav.vue'
       <router-view />
   </div>
   </div>
+  <FooterFoot>
+  </FooterFoot>
 </template>
 
 <style scoped>
@@ -25,9 +28,7 @@ import NavbarNav from '@/components/NavbarNav.vue'
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
   width: 100%;
-  padding: 20px;
 }
 
 </style>

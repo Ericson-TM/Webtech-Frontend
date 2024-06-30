@@ -1,17 +1,23 @@
 <template>
-  <div class="register-form">
-    <h2>Register</h2>
-    <form @submit.prevent="register">
-      <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" v-model="username" id="username" required />
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" v-model="password" id="password" required />
-      </div>
-      <button type="submit">Register</button>
-    </form>
+  <div class="container">
+    <div class="register-form">
+      <h2>Register</h2>
+      <form @submit.prevent="register">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" v-model="username" id="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" v-model="password" id="password" required />
+        </div>
+        <div class="form-group">
+          <label for="captcha" class="form-label">Was ist {{ num1 }} + {{ num2 }}?</label>
+          <input type="text" v-model="captcha" class="form-control" id="captcha" required>
+        </div>
+        <button type="submit">Register</button>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -23,22 +29,43 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 const username = ref('');
 const password = ref('');
+const captcha = ref('');
+const num1 = ref(Math.floor(Math.random() * 10));
+const num2 = ref(Math.floor(Math.random() * 10));
 
 const register = async () => {
+  const captchaResult = parseInt(captcha.value, 10);
+  if (captchaResult !== (num1.value + num2.value)) {
+    alert('Captcha ist falsch.');
+    return;
+  }
+
   try {
     const response = await axios.post('http://localhost:8080/user/register', {
       username: username.value,
-      password: password.value
+      password: password.value,
     });
-    console.log('User erfolgreich erstellt:', response.data);
-    router.push('/');
+
+    if (response.status === 200) {
+      alert('Registrierung erfolgreich!');
+      await router.push('/'); // Navigiere zur Login-Seite nach erfolgreicher Registrierung
+    } else {
+      alert('Registrierung fehlgeschlagen: ' + response.data.message);
+      username.value = '';
+      password.value = '';
+    }
   } catch (error) {
-    console.error('Fehler beim Registrieren:', error);
+    console.error('Ein Fehler ist bei der Registrierung aufgetreten:', error);
+    alert('Registrierung fehlgeschlagen.');
   }
 };
 </script>
 
 <style scoped>
+
+.container{
+  padding-top: 58px;
+}
 .register-form {
   max-width: 400px;
   margin: 0 auto;
